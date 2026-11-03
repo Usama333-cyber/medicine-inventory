@@ -1,0 +1,50 @@
+/* ==========================================
+   1. EXPIRY ROW STATUS COLORS (Requirement #5)
+   ========================================== */
+/* Red: Expired in the past */
+.table-expired {
+  background-color: #f8d7da !important; /* Soft Bootstrap danger red */
+  color: #721c24;
+}
+
+/* Orange: Expiring soon within 30 days */
+.table-expiring-soon {
+  background-color: #fff3cd !important; /* Soft Bootstrap warning yellow/orange */
+  color: #856404;
+}
+
+/* Green: Safe */
+.table-safe {
+  background-color: #d4edda !important; /* Soft Bootstrap success green */
+  color: #155724;
+}
+
+/* ==========================================
+   2. DASHBOARD CARDS STYLING (Bonus feature)
+   ========================================== */
+.stat-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border-radius: 8px;
+}
+
+/* Adds a nice lift effect when hovering over cards in a demo */
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================
+   3. NAVBAR & LAYOUT POLISH
+   ========================================== */
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   4. GENERAL UTILITIES
+   ========================================== */
+/* Ensures table cells vertically align nicely with action buttons */
+.align-middle td {
+  vertical-align: middle;
+}
