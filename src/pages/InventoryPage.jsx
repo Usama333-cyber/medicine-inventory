@@ -16,7 +16,7 @@ const statusLabels = {
   safe: 'Safe',
 };
 
-function InventoryPage({ medicines }) {
+function InventoryPage({ medicines, onDelete }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('all');
   const [sortDirection, setSortDirection] = useState('asc');
@@ -138,13 +138,30 @@ function InventoryPage({ medicines }) {
                     <td>{medicine.expiryDate}</td>
                     <td>{statusLabels[status]}</td>
                     <td>
-                      <Link
-                        to={`/edit/${medicine.id}`}
-                        className="btn btn-sm btn-outline-primary"
-                        aria-label={`Edit ${medicine.name}`}
-                      >
-                        Edit
-                      </Link>
+                      <div className="d-flex gap-2">
+                        <Link
+                          to={`/edit/${medicine.id}`}
+                          className="btn btn-sm btn-outline-primary"
+                          aria-label={`Edit ${medicine.name}`}
+                        >
+                          Edit
+                        </Link>
+                        <button
+                          type="button"
+                          className="btn btn-sm btn-outline-danger"
+                          aria-label={`Delete ${medicine.name}`}
+                          onClick={() => {
+                            const confirmed = window.confirm(
+                              `Delete ${medicine.name} from the inventory?`
+                            );
+                            if (confirmed) {
+                              onDelete(medicine.id);
+                            }
+                          }}
+                        >
+                          Delete
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 );
