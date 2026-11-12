@@ -119,6 +119,7 @@ function InventoryPage({ medicines }) {
                 Expiry date
               </th>
               <th scope="col">Status</th>
+              <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -136,12 +137,21 @@ function InventoryPage({ medicines }) {
                     <td>{medicine.mfgDate}</td>
                     <td>{medicine.expiryDate}</td>
                     <td>{statusLabels[status]}</td>
+                    <td>
+                      <Link
+                        to={`/edit/${medicine.id}`}
+                        className="btn btn-sm btn-outline-primary"
+                        aria-label={`Edit ${medicine.name}`}
+                      >
+                        Edit
+                      </Link>
+                    </td>
                   </tr>
                 );
               })
             ) : (
               <tr>
-                <td colSpan={8} className="text-center text-secondary py-4">
+                <td colSpan={9} className="text-center text-secondary py-4">
                   {medicines.length === 0
                     ? 'No medicines have been added yet.'
                     : 'No medicines match your search and filter.'}
