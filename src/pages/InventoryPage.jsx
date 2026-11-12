@@ -126,14 +126,23 @@ function InventoryPage({ medicines, onDelete }) {
             {visibleMedicines.length > 0 ? (
               visibleMedicines.map((medicine) => {
                 const status = getMedicineStatus(medicine.expiryDate);
+                const isLowStock = Number(medicine.quantity) < 10;
 
                 return (
-                  <tr key={medicine.id} className={`table-${status}`}>
+                  <tr
+                    key={medicine.id}
+                    className={`table-${status}${isLowStock ? ' low-stock-row' : ''}`}
+                  >
                     <th scope="row">{medicine.name}</th>
                     <td>{medicine.batchNumber}</td>
                     <td>{medicine.category}</td>
                     <td>{Number(medicine.price).toFixed(2)}</td>
-                    <td>{medicine.quantity}</td>
+                    <td>
+                      {medicine.quantity}
+                      {isLowStock && (
+                        <span className="badge text-bg-warning ms-2">Low stock</span>
+                      )}
+                    </td>
                     <td>{medicine.mfgDate}</td>
                     <td>{medicine.expiryDate}</td>
                     <td>{statusLabels[status]}</td>
