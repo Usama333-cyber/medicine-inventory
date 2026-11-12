@@ -22,6 +22,10 @@
   box-shadow: none !important;
 }
 
+.table tbody tr.low-stock-row > :first-child {
+  border-left: 4px solid #ffc107;
+}
+
 /* ==========================================
    2. DASHBOARD CARDS STYLING (Bonus feature)
    ========================================== */

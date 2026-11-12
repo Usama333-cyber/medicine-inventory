@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router';
 
 // We will create these pages next, but let's import them here so our routes are wired up
-import Navbar from './components/Navbar';
+import Navbar from './Components/Navbar';
 import Dashboard from './pages/Dashboard';
 import InventoryPage from './pages/InventoryPage';
 import AddEditMedicine from './pages/AddEditMedicine';
