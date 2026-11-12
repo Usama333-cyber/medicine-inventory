@@ -2,21 +2,24 @@
    1. EXPIRY ROW STATUS COLORS (Requirement #5)
    ========================================== */
 /* Red: Expired in the past */
-.table-expired {
-  background-color: #f8d7da !important; /* Soft Bootstrap danger red */
-  color: #721c24;
+.table tbody tr.table-expired > * {
+  background-color: #f8d7da !important;
+  color: #721c24 !important;
+  box-shadow: none !important;
 }
 
 /* Orange: Expiring soon within 30 days */
-.table-expiring-soon {
-  background-color: #fff3cd !important; /* Soft Bootstrap warning yellow/orange */
-  color: #856404;
+.table tbody tr.table-expiring-soon > * {
+  background-color: #fff3cd !important;
+  color: #856404 !important;
+  box-shadow: none !important;
 }
 
 /* Green: Safe */
-.table-safe {
-  background-color: #d4edda !important; /* Soft Bootstrap success green */
-  color: #155724;
+.table tbody tr.table-safe > * {
+  background-color: #d4edda !important;
+  color: #155724 !important;
+  box-shadow: none !important;
 }
 
 /* ==========================================
